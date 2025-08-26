@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from "../../assets/logo.png"
+import logo from "../../../assets/logo.png"
 export default () => {
 
     const [state, setState] = useState(false)
@@ -43,7 +43,7 @@ export default () => {
                         </button>
                     </div>
                 </div>
-                <div className={`flex-1 pb-3 md:block md:pb-0 md:mt-0 relative z-50 bg-white ${state ? 'block' : 'hidden'}`}>
+                <div className={`flex-1 pb-3 md:block md:pb-0 md:mt-0 relative z-50 max-sm:bg-white  ${state ? 'block' : 'hidden'}`}>
                     <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                         {
                             navigation.map((item, idx) => {
