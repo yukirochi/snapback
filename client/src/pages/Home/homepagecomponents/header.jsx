@@ -58,16 +58,16 @@ export default () => {
                         }
                         <span className='hidden w-px h-6 bg-gray-300 md:block'></span>
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
-                            <li>
+                            <NavLink to="/auth/login">
                                 <a href="javascript:void(0)" className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none">
                                     Log in
                                 </a>
-                            </li>
-                            <li>
+                            </NavLink>
+                            <NavLink to= "/auth/signin">
                                 <a href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-black hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
                                     Sign in
                                 </a>
-                            </li>
+                            </NavLink>
                         </div>
                     </ul>
                 </div>

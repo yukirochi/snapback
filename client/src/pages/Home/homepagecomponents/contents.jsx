@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "../styles/lobbycontents.css"
+import "../styles/picture.css"
 
-function LobbyContents({ data, data_qoutes, toggle, settoggle,setcard_data }) {
+function LobbyContents({ data, data_qoutes, toggle, settoggle, setcard_data }) {
   const [value, setValue] = useState([]);
   const [qoute, setqoute] = useState([]);
 
@@ -18,7 +18,7 @@ function LobbyContents({ data, data_qoutes, toggle, settoggle,setcard_data }) {
   }, [data_qoutes]);
 
   return (
-    <div className="w-[100%] h-[80%] flex justify-center overflow-y-scroll relative bottom-0 max-sm:mt-[]">
+    <div className="w-[100%] h-[80%] flex justify-center overflow-y-scroll relative bottom-0 max-sm:mt-[5px]">
       <div className="w-[70%] flex flex-wrap justify-center gap-10 mt-5">
         {value?.map((element, key) => (
           <Card
@@ -39,9 +39,7 @@ function Card({ url, author, quote, settoggle, setcard_data }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div
-     
-    >
+    <div>
       {!loaded && <div className="text-black animate-pulse">Loading...</div>}
 
       {/* preload image invisibly */}
@@ -53,28 +51,52 @@ function Card({ url, author, quote, settoggle, setcard_data }) {
       />
 
       {loaded && (
-        <div className="card w-[350px] h-[200px] max-sm:w-[300px]"
-        onClick={()=> {
-          settoggle(true)
-          setcard_data({
-            url: url,
-            author: author,
-            quote: quote
-          })
-        }}
+        <div
+          className="container noselect w-[350px] h-[200px] max-sm:w-[300px]"
+          onClick={() => {
+            settoggle(true);
+            setcard_data({
+              url: url,
+              author: author,
+              quote: quote,
+            });
+          }}
         >
-          <div class="card-inner">
-            <div
-              class="card-front"
-              style={{
-                backgroundImage: loaded ? `url(${url})` : "none",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <div className="card-back flex justify-center items-center flex-col">
-              <p className="card__title cursor-pointer text-black font-bold">{author}</p>
-              <p className="card__description cursor-pointer text-black text-[13px] text-center w-[70%]">"{quote}"</p>
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div id="card">
+              <div
+                class="card2"
+                style={{
+                  backgroundImage: loaded ? `url(${url})` : "none",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              ></div>
             </div>
           </div>
         </div>

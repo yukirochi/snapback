@@ -11,7 +11,7 @@ function Landingpage() {
   let [toggle, settoggle] = useState(false)
   let [card_data, setcard_data] = useState(null)
   const { data, error, loading } = PhotosCachedFetch(
-    `https://picsum.photos/v2/list?page=${currentPage + 1}&limit=9`,
+    `https://picsum.photos/v2/list?page=${currentPage + 1}&limit=12`,
     300000
   );
 

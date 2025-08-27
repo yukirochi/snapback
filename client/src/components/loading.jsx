@@ -2,8 +2,8 @@ import "./../styles/loading.css"
 
 function Loading() {
   return (
-    <div className="loader w-[100vw] h-[100vh] overflow-hidden z-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div class="wrapper">
+    <div className="loader w-[100vw] h-[100vh] overflow-hidden z-[1000] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="wrapper">
         <div class="catContainer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
