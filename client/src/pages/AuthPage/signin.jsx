@@ -1,6 +1,18 @@
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import Signin_Auth from "./auth/Signup_Auth"
 
 export default () => {
+    let [username, setusername] = useState("")
+    let [email, setemail] = useState("")
+    let [password, setpassword] = useState("") 
+    
+    let submit = async() => {
+        let {msg, status} = await Signin_Auth(username,email,password)
+        if(msg) alert(msg);
+    } 
+    
+    
     return (
         <main className="w-full h-[88%] flex flex-col items-center justify-center sm:px-4">
             <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
@@ -12,9 +24,11 @@ export default () => {
                 </div>
                 <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
                     <form
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={(e) => {
+                            e.preventDefault()
+                            submit()
+                        }}
                         className="space-y-5"
-
                     >
                         <div>
                             <label className="font-medium">
@@ -24,6 +38,7 @@ export default () => {
                                 type="text"
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                                onChange={(e)=> setusername(e.target.value)}
                             />
                         </div>
                         <div>
@@ -34,6 +49,7 @@ export default () => {
                                 type="email"
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                                  onChange={(e)=> setemail(e.target.value)}
                             />
                         </div>
                         <div>
@@ -44,10 +60,11 @@ export default () => {
                                 type="password"
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                                  onChange={(e)=> setpassword(e.target.value)}
                             />
                         </div>
                         <button
-                            className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+                            className="w-full px-4 py-2 text-white font-medium bg-black hover:opacity-[80%] rounded-lg duration-150"
                         >
                             Create account
                         </button>
