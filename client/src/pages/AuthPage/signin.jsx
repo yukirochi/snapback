@@ -10,6 +10,10 @@ export default () => {
     let submit = async() => {
         let {msg, status} = await Signin_Auth(username,email,password)
         if(msg) alert(msg);
+        
+        if(status){
+            localStorage.setItem("userdata","data")
+        }
     } 
     
     
